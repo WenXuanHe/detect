@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <video src="" id="webcam"></video>
+    <video src="" id="webcam" style="display:none"></video>
     <canvas id="canvas"></canvas>
     <div class="dg ac">
         <div class="dg main a taller-than-window" style="width: 245px;">
@@ -128,8 +128,6 @@
             // var classifier = jsfeat.haar.frontalface;
             var classifier1 = jsfeat.haar.frontalface;
             // var classifier = jsfeat.haar.frontalface;
-console.log(classifier1);
-console.log(classifier);
 
             var max_work_size = 160;
 
@@ -152,7 +150,8 @@ console.log(classifier);
                 var scale = Math.min(max_work_size / videoWidth, max_work_size / videoHeight);
                 var w = (videoWidth * scale) | 0;
                 var h = (videoHeight * scale) | 0;
-
+                console.log('w', w);
+                console.log('h', h);
                 img_u8 = new jsfeat.matrix_t(w, h, jsfeat.U8_t | jsfeat.C1_t);
                 edg = new jsfeat.matrix_t(w, h, jsfeat.U8_t | jsfeat.C1_t);
                 work_canvas = document.createElement('canvas');
